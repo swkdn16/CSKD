@@ -6,26 +6,34 @@
 * mmdet==2.22.0
 * pycocotools==2.0.2
 * yapf==0.40.1
-* follow installation [MMDetection](https://mmdetection.readthedocs.io/en/stable/get_started.html) for more information 
+* follow installation [MMDetection](https://mmdetection.readthedocs.io/en/stable/get_started.html) for more information
+
+# Dataset
+* Download the [MS-COCO](https://cocodataset.org/#home) dataset to ```mmdetection/data```
 
 # Train
-```
-#single GPU
-python tools/train.py configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py
 
-#multi GPU
+* single GPU
+```
+python tools/train.py configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py
+```
+
+* multi GPU
+```
 bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py [gpu num]
 ```
 
 # Test
-```
-#single GPU
-python tools/test.py configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py 
 
-#multi GPU
+* single GPU
+```
+python tools/test.py configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py 
+```
+
+* multi GPU
+```
 bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_coco_2x.py --checkpoint=cskd_retina_r101_distill_r50_fpn_coco_2x.pth [gpu num]
 ```
-
 
 # Results
 <table class="tg">
@@ -34,8 +42,8 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <th class="tg-9wq8" rowspan="2">Detector</th>
     <th class="tg-9wq8" colspan="2">Backbone</th>
     <th class="tg-9wq8" colspan="3">mAP</th>
-    <th class="tg-9wq8" rowspan="2">Config</th>
-    <th class="tg-9wq8" rowspan="2">Model</th>
+    <th class="tg-9wq8">Config</th>
+    <th class="tg-9wq8">Model</th>
   </tr>
   <tr>
     <th class="tg-lboi">Teacher</th>
@@ -43,11 +51,13 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <th class="tg-9wq8">Teacher</th>
     <th class="tg-9wq8">Student</th>
     <th class="tg-9wq8">Student w/ CSKD</th>
+    <th class="tg-9wq8"></th>
+    <th class="tg-9wq8"></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-c3ow">RetinaNet</td>
+    <td class="tg-9wq8">RetinaNet</td>
     <td class="tg-lboi">ResNet-101</td>
     <td class="tg-9wq8">ResNet-50</td>
     <td class="tg-9wq8">38.9</td>
@@ -62,19 +72,19 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <td class="tg-9wq8">ResNet-18</td>
     <td class="tg-9wq8">38.9</td>
     <td class="tg-9wq8">31.7</td>
-    <td class="tg-9wq8">35.6(+3.9)</td>
+    <td class="tg-9wq8">35.8(+4.1)</td>
     <td class="tg-9wq8"><a href="https://github.com/paper-id-11094/CSKD/blob/master/configs/cskd/cskd_retina_r101_distill_r18_fpn_coco_1x.py" target="_blank" rel="noopener noreferrer">config</a></td>
-    <td class="tg-9wq8"><a href="https://drive.google.com/file/d/1f-WP5NEhZIkouektBHEIRIA0tMvzShuB/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
+    <td class="tg-9wq8"><a href="https://drive.google.com/file/d/1vNKt7pJzTmI4tTQX9j-4INEL21MLNOPO/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
   </tr>
   <tr>
-    <td class="tg-c3ow">RetinaNet</td>
+    <td class="tg-9wq8">RetinaNet</td>
     <td class="tg-9wq8">ResNet-50</td>
     <td class="tg-9wq8">ResNet-18</td>
     <td class="tg-9wq8">37.4</td>
-    <td class="tg-xwyw">31.7</td>
-    <td class="tg-xwyw">35.2(+3.5)</td>
-    <td class="tg-u8x9"><a href="https://github.com/paper-id-11094/CSKD/blob/master/configs/cskd/cskd_retina_r50_distill_r18_fpn_coco_1x.py" target="_blank" rel="noopener noreferrer">config</a></td>
-    <td class="tg-u8x9"><a href="https://drive.google.com/file/d/1-x-6pAXE1eMpoUAqdNoV_Z7p_v20S5MF/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
+    <td class="tg-9wq8">31.7</td>
+    <td class="tg-9wq8">35.2(+3.5)</td>
+    <td class="tg-9wq8"><a href="https://github.com/paper-id-11094/CSKD/blob/master/configs/cskd/cskd_retina_r50_distill_r18_fpn_coco_1x.py" target="_blank" rel="noopener noreferrer">config</a></td>
+    <td class="tg-9wq8"><a href="https://drive.google.com/file/d/1-x-6pAXE1eMpoUAqdNoV_Z7p_v20S5MF/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
   </tr>
   <tr>
     <td class="tg-9wq8">FCOS</td>
@@ -87,7 +97,7 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <td class="tg-9wq8"><a href="https://drive.google.com/file/d/1Qo-RPogCUNESU4Vn5MrFdFzhCDoF9cnf/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
   </tr>
   <tr>
-    <td class="tg-c3ow">FCOS</td>
+    <td class="tg-9wq8">FCOS</td>
     <td class="tg-9wq8">ResNet-50</td>
     <td class="tg-9wq8">ResNet-18</td>
     <td class="tg-9wq8">40.9</td>
@@ -107,7 +117,7 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <td class="tg-lboi"><a href="https://drive.google.com/file/d/1kTXFLXQf8I72DDlpsnnObG0RWn8oQfcT/view?usp=sharing" target="_blank" rel="noopener noreferrer">model</a></td>
   </tr>
   <tr>
-    <td class="tg-0pky">Faster-RCNN</td>
+    <td class="tg-lboi">Faster-RCNN</td>
     <td class="tg-9wq8">ResNet-50</td>
     <td class="tg-9wq8">ResNet-18</td>
     <td class="tg-9wq8">38.4</td>
