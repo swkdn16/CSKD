@@ -42,8 +42,8 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <th class="tg-9wq8" rowspan="2">Detector</th>
     <th class="tg-9wq8" colspan="2">Backbone</th>
     <th class="tg-9wq8" colspan="3">mAP</th>
-    <th class="tg-9wq8">Config</th>
-    <th class="tg-9wq8">Model</th>
+    <th class="tg-9wq8" rowspan="2">Config</th>
+    <th class="tg-9wq8" rowspan="2">Model</th>
   </tr>
   <tr>
     <th class="tg-lboi">Teacher</th>
@@ -51,8 +51,6 @@ bash tools/dist_train.sh --config=configs/cskd/cskd_retina_r101_distill_r50_fpn_
     <th class="tg-9wq8">Teacher</th>
     <th class="tg-9wq8">Student</th>
     <th class="tg-9wq8">Student w/ CSKD</th>
-    <th class="tg-9wq8"></th>
-    <th class="tg-9wq8"></th>
   </tr>
 </thead>
 <tbody>
