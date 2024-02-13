@@ -1,5 +1,4 @@
 # CSKD: Knowledge Distillation for Object Detectors via Cosine Similarity-Guided Features
-* CVPR submitted, paper# 11094
 
 # Requirements
 * mmcv-full==1.4.7
